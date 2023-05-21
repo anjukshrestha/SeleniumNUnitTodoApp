@@ -21,7 +21,7 @@ pipeline {
  
                 }
                 // Enable reporting in Jenkins
-                browserStackReportPublisher 'automate'
+                browserStackReportPublisher 'app-automate'
             }
         } 
         
