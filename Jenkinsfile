@@ -13,7 +13,7 @@ pipeline {
             }
         }
         
-        stage('setup') {
+        stage('run') {
             steps {
                 browserstack('3bcba4c1-b268-409b-8b1b-111753592a00') {
                     // For Linux-based systems, add the following commands in the given console to download the binary, run it, and stop its execution after the test has been executed.
@@ -21,18 +21,14 @@ pipeline {
                     sh 'unzip -o BrowserStackLocal-linux-x64.zip'
                     sh './BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon start'
                      
+                     sh '/var/lib/jenkins/.dotnet/dotnet test --interactive SeleniumNUnitTodoApp.sln'
  
                 }
                 // Enable reporting in Jenkins
                 browserStackReportPublisher 'automate'
             }
         }
-        
-        stage('Test') {
-            steps {
-               sh '/var/lib/jenkins/.dotnet/dotnet test --interactive SeleniumNUnitTodoApp.sln'
-            }
-        }
+         
         
         stage('Teardown'){
             steps{
