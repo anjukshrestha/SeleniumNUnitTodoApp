@@ -18,9 +18,9 @@ namespace SeleniumNUnitTodoApp
         [SetUp]
         public void SetUp()
         {
-            String username = "anjushrestha_eBfG0P";//Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
-            String accessKey = "yGE1mxJQJbsiyUPHP9Uy";Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
-            String buildName = "";Environment.GetEnvironmentVariable("JENKINS_BUILD_LABEL");
+            String username = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
+            String accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
+            String buildName = Environment.GetEnvironmentVariable("JENKINS_BUILD_LABEL");
  
             ChromeOptions capabilities = new ChromeOptions();
             capabilities.BrowserVersion = "100.0";
