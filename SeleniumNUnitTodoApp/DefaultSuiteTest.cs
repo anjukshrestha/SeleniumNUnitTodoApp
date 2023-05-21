@@ -35,7 +35,7 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("accessKey", accessKey);
             browserstackOptions.Add("seleniumVersion", "4.0.0");
 
-            capabilities.AddAdditionalOption("build", buildNameJenkins);
+            capabilities.AddAdditionalCapability("build", buildNameJenkins);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
             
