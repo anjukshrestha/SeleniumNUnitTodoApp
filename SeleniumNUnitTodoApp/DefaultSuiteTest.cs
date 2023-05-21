@@ -35,7 +35,8 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("seleniumVersion", "4.9.1");
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
-            driver = new RemoteWebDriver(new Uri("http://localhost:45454/wd/hub/"), capabilities);
+            
+            driver = new RemoteWebDriver(new Uri("https://hub.browserstack.com/wd/hub/"), capabilities);
             
             js = (IJavaScriptExecutor)driver;
             vars = new Dictionary<string, object>();
@@ -48,11 +49,11 @@ namespace SeleniumNUnitTodoApp
         public void TestAddTodo() {
             driver.Navigate().GoToUrl("https://anjushrestha.com/todo/"); 
             driver.Manage().Window.Maximize();
-            //driver.FindElement(By.Id("taskInput"));//.SendKeys("FirstTask");
-            //driver.FindElement(By.Id("addButton")).Click();
-            //var text = driver.FindElement(By.XPath("//*[@id=\"taskList\"]/li/span")).Text;
+            driver.FindElement(By.Id("taskInput"));//.SendKeys("FirstTask");
+            driver.FindElement(By.Id("addButton")).Click();
+            var text = driver.FindElement(By.XPath("//*[@id=\"taskList\"]/li/span")).Text;
             
-            //Assert.AreEqual("FirstTask", text); 
+            Assert.AreEqual("FirstTask", text); 
              
         }
     }
