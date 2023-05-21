@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTutorial", "SeleniumNUnitTodoApp\SeleniumNUnitTodoApp.csproj", "{C1EE34AF-A34A-42D6-9C79-0F02F014AF82}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Meta", "Meta", "{CEFA2D61-1FDB-4D47-9CEF-2D0E3F8A8D7F}"
+	ProjectSection(SolutionItems) = preProject
+		Jenkinsfile = Jenkinsfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

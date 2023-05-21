@@ -28,5 +28,22 @@ pipeline {
             }
         }
         
+        stage('Test') {
+            steps {
+               sh '/var/lib/jenkins/.dotnet/dotnet test --interactive SeleniumNUnitTodoApp.sln'
+            }
+        }
+        
+        stage('Teardown'){
+            steps{
+                browserstack('3bcba4c1-b268-409b-8b1b-111753592a00') {
+                    
+                    sh './BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon stop'
+ 
+                }
+            
+            }
+        }
+        
     }
 }
