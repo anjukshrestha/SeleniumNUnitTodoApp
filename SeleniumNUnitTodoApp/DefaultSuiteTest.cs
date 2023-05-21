@@ -31,10 +31,11 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("os", "Windows");
             browserstackOptions.Add("osVersion", "10");
             browserstackOptions.Add("sessionName", "BStack Build Name: " + buildName);
-            capabilities.setCapability("build", buildNameJenkins);
             browserstackOptions.Add("userName", username);
             browserstackOptions.Add("accessKey", accessKey);
             browserstackOptions.Add("seleniumVersion", "4.0.0");
+
+            capabilities.AddAdditionalOption("build", buildNameJenkins);
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
             
