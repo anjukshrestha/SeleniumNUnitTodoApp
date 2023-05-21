@@ -32,7 +32,7 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("sessionName", "BStack Build Name: " + buildName);
             browserstackOptions.Add("userName", username);
             browserstackOptions.Add("accessKey", accessKey);
-            browserstackOptions.Add("seleniumVersion", "4.9.1");
+            browserstackOptions.Add("seleniumVersion", "4.0.0");
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
             
