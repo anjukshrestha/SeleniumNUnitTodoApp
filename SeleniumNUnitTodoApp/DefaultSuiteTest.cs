@@ -20,7 +20,7 @@ namespace SeleniumNUnitTodoApp
         {
             String username = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
             String accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
-            String buildName = Environment.GetEnvironmentVariable("JENKINS_LABEL");
+            String buildName = Environment.GetEnvironmentVariable("JENKINS_BUILD_LABEL");
  
             ChromeOptions capabilities = new ChromeOptions
             {
