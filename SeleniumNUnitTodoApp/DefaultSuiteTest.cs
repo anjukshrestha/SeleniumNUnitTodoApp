@@ -33,7 +33,7 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("seleniumVersion", "4.0.0");
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
 
-            driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub/"), capabilities);
+            driver = new RemoteWebDriver(new Uri("http://localhost:45454/wd/hub/"), capabilities);
             js = (IJavaScriptExecutor)driver;
             vars = new Dictionary<string, object>();
         }
