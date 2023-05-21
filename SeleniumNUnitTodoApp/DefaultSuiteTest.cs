@@ -21,7 +21,8 @@ namespace SeleniumNUnitTodoApp
             String username = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
             String accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
             String buildName = Environment.GetEnvironmentVariable("JENKINS_BUILD_LABEL");
- 
+            String browserstackBuild = Environment.GetEnvironmentVariable("BROWSERSTACK_BUILD_NAME");
+
             ChromeOptions capabilities = new ChromeOptions
             {
                 BrowserVersion = "100.0"
@@ -31,6 +32,7 @@ namespace SeleniumNUnitTodoApp
             browserstackOptions.Add("osVersion", "10");
             browserstackOptions.Add("sessionName", "BStack Build Name: " + buildName);
             browserstackOptions.Add("userName", username);
+            browserstackOptions.Add("build", browserstackBuild);
             browserstackOptions.Add("accessKey", accessKey);
             browserstackOptions.Add("seleniumVersion", "4.0.0");
             capabilities.AddAdditionalOption("bstack:options", browserstackOptions);
