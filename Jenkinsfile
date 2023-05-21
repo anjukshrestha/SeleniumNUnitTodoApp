@@ -1,11 +1,17 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage ('Git Checkout') {
+              steps {
+                  git branch: 'main',  url: 'https://github.com/anjukshrestha/SeleniumNUnitTodoApp'
+                }
+        }
+         
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                sh '/var/lib/jenkins/.dotnet/dotnet build SeleniumNUnitTodoApp.sln'
             }
         }
+        
     }
 }
