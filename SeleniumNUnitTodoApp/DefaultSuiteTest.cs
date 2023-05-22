@@ -50,7 +50,7 @@ namespace SeleniumNUnitTodoApp
         }
         [Test]
         public void TestAddTodo() {
-            driver.Navigate().GoToUrl("https://anjushrestha.com/todo/"); 
+            driver.Navigate().GoToUrl("https://anjukshrestha.github.io/"); 
             driver.Manage().Window.Maximize();
             driver.FindElement(By.Id("taskInput")).SendKeys("FirstTask");
             driver.FindElement(By.Id("addButton")).Click();
@@ -62,7 +62,7 @@ namespace SeleniumNUnitTodoApp
         
         [Test]
         public void TestVerifyAddIsWorking() {
-            driver.Navigate().GoToUrl("https://anjushrestha.com/todo/"); 
+            driver.Navigate().GoToUrl("https://anjukshrestha.github.io/"); 
             driver.Manage().Window.Maximize();
             driver.FindElement(By.Id("taskInput")).SendKeys("FirstTask");
             driver.FindElement(By.Id("addButton")).Click();
