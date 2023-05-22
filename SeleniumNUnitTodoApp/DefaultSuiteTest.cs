@@ -59,5 +59,17 @@ namespace SeleniumNUnitTodoApp
             Assert.AreEqual("FirstTask", text); 
              
         }
+        
+        [Test]
+        public void TestVerifyAddIsWorking() {
+            driver.Navigate().GoToUrl("https://anjushrestha.com/todo/"); 
+            driver.Manage().Window.Maximize();
+            driver.FindElement(By.Id("taskInput")).SendKeys("FirstTask");
+            driver.FindElement(By.Id("addButton")).Click();
+            var text = driver.FindElement(By.XPath("//*[@id=\"taskList\"]/li/span")).Text;
+            
+            Assert.AreEqual("FirstTask", text); 
+             
+        }
     }
 }
