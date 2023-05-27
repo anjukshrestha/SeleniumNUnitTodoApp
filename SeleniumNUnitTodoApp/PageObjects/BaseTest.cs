@@ -49,7 +49,7 @@ public class BaseTest
     public void SetUp()
     {
         TestContext.Progress.WriteLine("SetUp");
-        driver = createDriver("chrome");
+        driver = createDriver("browserstack");
         driver.Manage().Window.Size = new Size(1920, 1200);
         driver.Navigate().GoToUrl("https://anjukshrestha.github.io//");
 
