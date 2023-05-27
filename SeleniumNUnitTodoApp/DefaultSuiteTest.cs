@@ -24,8 +24,9 @@ namespace SeleniumNUnitTodoApp
         [Test]
         public void TestVerifyAddIsWorking() 
         {
-            GetDriver().FindElement(By.Id("name")).SendKeys("Anju");
-            var text = driver.FindElement(By.Id("name")).Text;
+            GetDriver().FindElement(By.Id("taskInput")).SendKeys("FirstTask");
+            GetDriver().FindElement(By.Id("addButton")).Click();
+            var text = GetDriver().FindElement(By.XPath("//*[@id=\"taskList\"]/li/span")).Text;
             
             Assert.AreEqual("FirstTask", text); 
              
@@ -34,8 +35,9 @@ namespace SeleniumNUnitTodoApp
         [Test]
         public void TestVerifytest() 
         {
-            GetDriver().FindElement(By.Id("name")).SendKeys("Anju");
-            var text = driver.FindElement(By.Id("name")).Text;
+            GetDriver().FindElement(By.Id("taskInput")).SendKeys("FirstTask");
+            GetDriver().FindElement(By.Id("addButton")).Click();
+            var text = GetDriver().FindElement(By.XPath("//*[@id=\"taskList\"]/li/span")).Text;
             
             Assert.AreEqual("FirstTask", text); 
              
